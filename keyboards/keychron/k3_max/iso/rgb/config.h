@@ -16,6 +16,18 @@
 
 #pragma once
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+#define RETRO_TAPPING
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#define TAPPING_TOGGLE 2
+
+/* combo stuff*/
+#define FORCE_NKRO
+#define COMBO_TERM 20
+
+#define ONESHOT_TAP_TOGGLE 3 /* Tapping this number of times holds the key until tapped once again. */
+#define ONESHOT_TIMEOUT 5000 /* Time (in ms) before the one shot key is released */
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define DRIVER_COUNT 2
@@ -25,8 +37,7 @@
 #    define SPI_MISO_PIN A6
 #    define SPI_MOSI_PIN A7
 
-#    define DRIVER_CS_PINS \
-        { B8, B9 }
+#    define DRIVER_CS_PINS {B8, B9}
 #    define SNLED23751_SPI_DIVISOR 16
 #    define SPI_DRIVER SPID1
 
@@ -34,8 +45,7 @@
 #    define SNLED27351_PHASE_CHANNEL MSKPHASE_9CHANNEL
 
 /* Set LED driver current */
-#    define SNLED27351_CURRENT_TUNE \
-        { 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12 }
+#    define SNLED27351_CURRENT_TUNE {0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12, 0x12}
 
 /* Set to infinit, which is use in USB mode by default */
 #    define RGB_MATRIX_TIMEOUT RGB_MATRIX_TIMEOUT_INFINITE
@@ -48,7 +58,7 @@
 /* Indications */
 #    define DIM_CAPS_LOCK
 #    define CAPS_LOCK_INDEX 46
-#    define LOW_BAT_IND_INDEX  { 78 }
+#    define LOW_BAT_IND_INDEX {78}
 
 #    define RGB_MATRIX_KEYPRESSES
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
